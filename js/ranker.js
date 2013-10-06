@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 700 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
     .range([0, width]);
@@ -65,7 +65,7 @@ angular.module('rankerApp', [])
 
     d3.select('svg g')
         .append('text')
-        .attr({'id': 'nameLabel', 'x': 500, 'y': 200})
+        .attr({'id': 'nameLabel', 'x': 20, 'y': 520})
         .style({'font-size': '200%', 'font-weight': 'bold', 'fill': '#ddd'});
 
     $scope.addItem = function() {
@@ -75,7 +75,7 @@ angular.module('rankerApp', [])
       $scope.itemName = '';
       $scope.itemX = '';
       $scope.itemY = '';
-      updateDots($scope);
+      updateGraph($scope);
     };
    })
    .directive('gViz', function ($parse) {
@@ -85,13 +85,15 @@ angular.module('rankerApp', [])
         template: '<div id="chart"></div>',
 
         link: function (scope, element, attrs) {
-             updateDots(scope);
+             updateGraph(scope);
              }
         }
       });
 
-var updateDots = function(scope) {
+var updateGraph = function(scope) {
   var svg = d3.select("svg g");
+  var xLab = svg.selectAll(".x.axis .label").text(scope.X.name);
+  var yLab = svg.selectAll(".y.axis .label").text(scope.Y.name);
   svg.selectAll(".dot").remove();
   svg.selectAll(".dot").data(scope.items).enter()
                                     .append("circle")
@@ -99,7 +101,7 @@ var updateDots = function(scope) {
                                     .attr("cx", function (d) { return x(d.x); })
                                     .attr("cy", function (d) { return y(d.y); })
                                     .attr("r",10)
-                                    .style("fill", function(d) { return color(d.x); })
+                                    .style("fill", function(d) { return color(d.x*d.y); })
                                     .on('mouseover', function(d) {
                                       d3.select('svg g #nameLabel')
                                         .text(d.name)

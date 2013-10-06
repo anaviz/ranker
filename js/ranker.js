@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 700 - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    width = 550 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 var x = d3.scale.linear()
     .range([0, width]);
@@ -25,8 +25,8 @@ y.domain([0,10]).nice();
 angular.module('rankerApp', [])
   .controller('RankerCtrl', function RankerCtrl($scope) {
     $scope.items = [
-      {name:'Doctor', x:1, y:10},
-      {name:'Programmer', x:10, y:1}];
+      {name:'Doctor', x:5, y:5},
+      {name:'Programmer', x:7, y:8}];
    
     $scope.X = {name:'Fun'};
     $scope.Y = {name:'Well-Paid'};
@@ -65,7 +65,7 @@ angular.module('rankerApp', [])
 
     d3.select('svg g')
         .append('text')
-        .attr({'id': 'nameLabel', 'x': 20, 'y': 520})
+        .attr({'id': 'nameLabel', 'x': 20, 'y': 420})
         .style({'font-size': '200%', 'font-weight': 'bold', 'fill': '#ddd'});
 
     $scope.addItem = function() {
@@ -100,7 +100,7 @@ var updateGraph = function(scope) {
                                     .attr("class", "dot")
                                     .attr("cx", function (d) { return x(d.x); })
                                     .attr("cy", function (d) { return y(d.y); })
-                                    .attr("r",10)
+                                    .attr("r",8)
                                     .style("fill", function(d) { return color(d.x*d.y); })
                                     .on('mouseover', function(d) {
                                       d3.select('svg g #nameLabel')

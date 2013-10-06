@@ -86,14 +86,14 @@ table input{
 .section1{
 	margin: 1%;
 	padding: 0;
-	width: 36%;
+	width: 44%;
 	height: auto;
 	float: left;
 }
 .section2{
 	margin: 1%;
 	padding: 0;
-	width: 60%;
+	width: 52%;
 	height: auto;
 	float: left;
 }
@@ -103,7 +103,7 @@ h1{
 }
 
 table, form{
-	width: 100%;
+	width: 80%;
 	margin: 0;
 }
 
@@ -133,5 +133,5 @@ form input{
 }
 
 .dot {
-  stroke: #000;
+  opacity: 0.7;
 }

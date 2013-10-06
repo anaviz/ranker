@@ -84,28 +84,47 @@ table input{
 }
 
 .section1{
-	margin: 2%;
+	margin: 1%;
 	padding: 0;
-	width: 30%;
+	width: 36%;
 	height: auto;
 	float: left;
 }
 .section2{
-	margin: 2%;
+	margin: 1%;
 	padding: 0;
-	width: 62%;
+	width: 60%;
 	height: auto;
 	float: left;
 }
 
 h1{
-	margin-left: 2%; 
+	margin-left: 1%; 
+}
+
+table, form{
+	width: 100%;
+	margin: 0;
+}
+
+td{
+	width: 25%;
+}
+
+table input{
+	width: 95%;
+}
+
+form input{
+	width: 17%;
+	margin-right: 6%;
 }
 
 .table_header{
 	font-weight: bolder;
-	font-size: 95%;
+	font-size: 90%;
 }
+
 
 .axis path,
 .axis line {

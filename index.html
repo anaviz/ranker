@@ -18,26 +18,26 @@
 		<h1>RANKER</h1>
 		<div ng-controller="RankerCtrl">
 			<table>
-				<th>
-					<td>
+				<tr>
+					<th>
 						Item
-					</td>
-					<td>
+					</th>
+					<th>
 						X
-					</td>
-					<td>
+					</th>
+					<th>
 						Y
-					</td>
-				</th>
+					</th>
+				</tr>
 				<tr ng-repeat="item in items">
 					<td>
-						{{todo.name}}
+						{{item.name}}
 					</td>
 					<td>
-						{{todo.x}}
+						{{item.x}}
 					</td>
 					<td>
-						{{todo.y}}
+						{{item.y}}
 					</td>
 				</tr>
 			</table>

@@ -4,6 +4,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
 		<script type="text/javascript" src="js/ranker.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
 
 		<title>Ranker</title>
 
@@ -23,10 +24,10 @@
 						Item
 					</th>
 					<th>
-						X
+						<input type="text" ng-model="X.name" placeholder="X">
 					</th>
 					<th>
-						Y
+						<input type="text" ng-model="Y.name" placeholder="Y">
 					</th>
 				</tr>
 				<tr ng-repeat="item in items">
@@ -42,11 +43,15 @@
 				</tr>
 			</table>
 			<form ng-submit="addItem()">
-				<input type="text" ng-model="itemName" size="20">
-				<input type="text" ng-model="itemX" size="5">
-				<input type="text" ng-model="itemY" size="5">
+				<input type="text" ng-model="itemName">
+				<input type="text" ng-model="itemX">
+				<input type="text" ng-model="itemY">
 				<input class="button" type="submit" value="add">
 			</form>
+
+			<div id="graph">
+				
+			</div>
 
 		</div> 
 		

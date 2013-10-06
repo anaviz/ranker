@@ -1,5 +1,4 @@
 function RankerCtrl($scope) {
-<<<<<<< HEAD
   // some example items just to get us started
   $scope.items = [
     {name:'Doctor', x:1, y:10},
@@ -13,7 +12,4 @@ function RankerCtrl($scope) {
     $scope.itemX = '';
     $scope.itemY = '';
   };
-=======
-
->>>>>>> bd177bae1e6e54fd0243030f3204a67ce1c33e06
 }

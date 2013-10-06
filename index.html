@@ -29,18 +29,25 @@
 						Y
 					</td>
 				</th>
-				<tr>
+				<tr ng-repeat="item in items">
 					<td>
-						Doctor
+						{{todo.name}}
 					</td>
 					<td>
-						1
+						{{todo.x}}
 					</td>
 					<td>
-						10
+						{{todo.y}}
 					</td>
 				</tr>
 			</table>
+			<form ng-submit="addItem()">
+				<input type="text" ng-model="itemName" size="20">
+				<input type="text" ng-model="itemX" size="5">
+				<input type="text" ng-model="itemY" size="5">
+				<input class="button" type="submit" value="add">
+			</form>
+
 		</div>
 		
 	</body>
